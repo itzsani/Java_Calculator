@@ -24,6 +24,3 @@ jobs:
 
     - name: Compile Java file
       run: javac src/Calculator.java
-
-    - name: Run Java application
-      run: java -cp src Calculator
