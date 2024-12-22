@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Compile Java file
-      run: javac Calculator.java
+      run: javac src/Calculator.java
 
     - name: Run Java application
-      run: java Calculator
+      run: java -cp src Calculator
