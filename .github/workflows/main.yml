@@ -1,4 +1,4 @@
-name: Java CI
+name: Java Calculator CI
 
 on:
   push:
@@ -13,18 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
         java-version: '17' # Adjust to your Java version
-        distribution: 'temurin' # Specify the Java distribution (e.g., temurin, zulu, adopt)
+        distribution: 'temurin'
 
-    - name: Build and Test with Gradle/Maven
-      run: |
-        # If using Gradle:
-        ./gradlew build
-        # If using Maven, replace the above line with:
-        # mvn install
+    - name: Compile Java file
+      run: javac Calculator.java
+
+    - name: Run Java application
+      run: java Calculator
