@@ -20,10 +20,11 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17' # Adjust to your Java version
+        distribution: 'temurin' # Specify the Java distribution (e.g., temurin, zulu, adopt)
 
-    - name: Build with Gradle/Maven
+    - name: Build and Test with Gradle/Maven
       run: |
         # If using Gradle:
         ./gradlew build
-        # If using Maven:
-        mvn install
+        # If using Maven, replace the above line with:
+        # mvn install
